@@ -1,0 +1,19 @@
+site_name: Entangled Remote Manager
+
+plugins:
+  - entangled
+
+markdown_extensions:
+  - pymdownx.superfences
+
+nav:
+    - index.md
+    - computer.md
+    - target.md
+    - remote.md
+    - calculator.md
+    - running.md
+
+theme:
+  name: material
+
