@@ -1,0 +1,57 @@
+---
+ ALL: #                       % ,  Time (s), Max, Min Load (relative)
+   Classes:
+     Flib LowLevel      : [ 2.7,  6.35E-02,  1.00,  1.00]
+     Communications     : [ 1.8,  4.28E-02,  1.25,  0.75]
+     PS Computation     : [ 82.4,  2.0,  1.00,  1.00]
+     Total              : [ 86.9,  2.4,  1.00,  1.00]
+   Categories: #Ordered by time consumption
+     PSolver Computation:
+       Data             : [ 47.5,  1.1,  1.01,  0.99]
+       Class            : PS Computation
+       Info             : 3D SG_FFT and related operations
+     PSolver Kernel Creation:
+       Data             : [ 34.9,  0.83,  1.00,  1.00]
+       Class            : PS Computation
+       Info             : ISF operations and creation of the kernel
+     Routine Profiling:
+       Data             : [ 1.6,  3.78E-02,  1.01,  0.99]
+       Class            : Flib LowLevel
+       Info             : Profiling performances for debugging
+     Wait:
+       Data             : [ 0.8,  1.99E-02,  1.07,  0.93]
+       Class            : Communications
+       Info             : Time spent in MPI_Wait or MPI_Waitall
+     Array allocations:
+       Data             : [ 0.8,  1.95E-02,  1.01,  0.99]
+       Class            : Flib LowLevel
+       Info             : Heap storage allocation and associated profiling
+     PSolver Communication:
+       Data             : [ 0.6,  1.33E-02,  1.01,  0.99]
+       Class            : Communications
+       Info             : MPI_ALLTOALL and MPI_ALLGATHERV
+     Allreduce, Small Size:
+       Data             : [ 0.4,  9.43E-03,  1.97,  0.03]
+       Class            : Communications
+       Info             : Allreduce operations for less than 5 elements
+     Init to Zero:
+       Data             : [ 0.3,  6.13E-03,  1.00,  1.00]
+       Class            : Flib LowLevel
+       Info             : Memset of storage space
+     Gather:
+       Data             : [ 0.0,  8.15E-05,  1.87,  0.13]
+       Class            : Communications
+       Info             : Gather operations, in general moderate size arrays
+     Send:
+       Data             : [ 0.0,  4.52E-05,  1.02,  0.98]
+       Class            : Communications
+       Info             : Time spent in MPI_Send or MPI_Isend
+     Recv:
+       Data             : [ 0.0,  2.10E-05,  1.07,  0.93]
+       Class            : Communications
+       Info             : Time spent in MPI_Recv or MPI_Irecv
+ CPU parallelism:
+   MPI tasks            : 2
+   OMP threads          : 112
+ Hostnames: [compute31, compute31]
+ Report timestamp       : 2025-11-27 00:59:17.893

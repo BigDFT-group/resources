@@ -1,0 +1,566 @@
+[0] MPI startup(): ===== GPU topology on compute33 =====
+[0] MPI startup(): NUMA nodes     : 2
+[0] MPI startup(): GPUs           : 4
+[0] MPI startup(): Stacks (Tiles) : 8
+[0] MPI startup(): Hierarchy mode : flat
+[0] MPI startup(): Backend        : level zero
+[0] MPI startup(): Device name    : Intel(R) Data Center GPU Max 1550
+[0] MPI startup(): NUMA Id	GPU Id         Stacks (tiles)                 Ranks on this NUMA
+[0] MPI startup(): 0      	0,1            (0,1)(2,3)                     0,1,2,3
+[0] MPI startup(): 1      	2,3            (4,5)(6,7)                     4,5,6,7
+[0] MPI startup(): ===== GPU pinning on compute33 =====
+[0] MPI startup(): Rank	 Pin stack (tile)
+[0] MPI startup(): 0	 {0}
+[0] MPI startup(): 1	 {1}
+[0] MPI startup(): 2	 {2}
+[0] MPI startup(): 3	 {3}
+[0] MPI startup(): 4	 {4}
+[0] MPI startup(): 5	 {5}
+[0] MPI startup(): 6	 {6}
+[0] MPI startup(): 7	 {7}
+[0] MPI startup(): Intel(R) MPI Library, Version 2021.16  Build 20250513 (id: a7c135c)
+[0] MPI startup(): Copyright (C) 2003-2025 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 2.1.0-impi
+[0] MPI startup(): libfabric provider: psm3
+[0] MPI startup(): File "/install/software/oneAPI/2025.2/mpi/2021.16/opt/mpi/etc/tuning_spr_shm-ofi_psm3_200_x1.dat" not found
+[0] MPI startup(): File "/install/software/oneAPI/2025.2/mpi/2021.16/opt/mpi/etc/tuning_spr_shm-ofi_psm3_200.dat" not found
+[0] MPI startup(): File "/install/software/oneAPI/2025.2/mpi/2021.16/opt/mpi/etc/tuning_spr_shm-ofi_psm3.dat" not found
+[0] MPI startup(): Load tuning file: "/install/software/oneAPI/2025.2/mpi/2021.16/opt/mpi/etc/tuning_spr_shm-ofi.dat"
+[0] MPI startup(): Number of NICs:  1 
+[0] MPI startup(): ===== NIC pinning on compute33 =====
+[0] MPI startup(): Rank    Thread id  Pin nic
+[0] MPI startup(): 0       0          autoselect_one:mlx5_0;mlx5_1
+[0] MPI startup(): 1       0          autoselect_one:mlx5_0;mlx5_1
+[0] MPI startup(): 2       0          autoselect_one:mlx5_0;mlx5_1
+[0] MPI startup(): 3       0          autoselect_one:mlx5_0;mlx5_1
+[0] MPI startup(): 4       0          autoselect_one:mlx5_0;mlx5_1
+[0] MPI startup(): 5       0          autoselect_one:mlx5_0;mlx5_1
+[0] MPI startup(): 6       0          autoselect_one:mlx5_0;mlx5_1
+[0] MPI startup(): 7       0          autoselect_one:mlx5_0;mlx5_1
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+   setup:
+     accel                             : ONEMATH # Material Acceleration
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+     screening                         : 0 #      Mu screening parameter
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+   environment:
+     cavity                            : none #   Type of the cavity
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+   MPI tasks                           :  1
+   OpenMP threads per MPI task         :  28
+   Poisson Solver GPU Enumerator:
+     BACKEND                           :  4
+   setup:
+     accel                             : ONEMATH # Material Acceleration
+     Attributes:
+       DEVICE                          :  0
+       MODEL                           :  2
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+     screening                         : 0 #      Mu screening parameter
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+   environment:
+     cavity                            : none #   Type of the cavity
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+   setup:
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+   setup:
+     accel                             : ONEMATH # Material Acceleration
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+   MPI tasks                           :  1
+   OpenMP threads per MPI task         :  28
+   Poisson Solver GPU Enumerator:
+     BACKEND                           :  4
+     Attributes:
+       DEVICE                          :  0
+       MODEL                           :  2
+     accel                             : ONEMATH # Material Acceleration
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+     screening                         : 0 #      Mu screening parameter
+     screening                         : 0 #      Mu screening parameter
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+   environment:
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+   setup:
+     accel                             : ONEMATH # Material Acceleration
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+   environment:
+     cavity                            : none #   Type of the cavity
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+     cavity                            : none #   Type of the cavity
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+   MPI tasks                           :  1
+   OpenMP threads per MPI task         :  28
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+   setup:
+     accel                             : ONEMATH # Material Acceleration
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+   MPI tasks                           :  1
+   OpenMP threads per MPI task         :  28
+   Poisson Solver GPU Enumerator:
+     BACKEND                           :  4
+     Attributes:
+       DEVICE                          :  0
+       MODEL                           :  2
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+     screening                         : 0 #      Mu screening parameter
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+   environment:
+   Poisson Solver GPU Enumerator:
+     BACKEND                           :  4
+     Attributes:
+       DEVICE                          :  0
+       MODEL                           :  2
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+   setup:
+     accel                             : ONEMATH # Material Acceleration
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+     screening                         : 0 #      Mu screening parameter
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+     cavity                            : none #   Type of the cavity
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+   MPI tasks                           :  1
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+   environment:
+     cavity                            : none #   Type of the cavity
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+   OpenMP threads per MPI task         :  28
+   Poisson Solver GPU Enumerator:
+     BACKEND                           :  4
+     Attributes:
+       DEVICE                          :  0
+       MODEL                           :  2
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+     screening                         : 0 #      Mu screening parameter
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+   MPI tasks                           :  1
+   OpenMP threads per MPI task         :  28
+   Poisson Solver GPU Enumerator:
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+   environment:
+     cavity                            : none #   Type of the cavity
+     BACKEND                           :  4
+     Attributes:
+       DEVICE                          :  0
+       MODEL                           :  2
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+   MPI tasks                           :  1
+   OpenMP threads per MPI task         :  28
+   Poisson Solver GPU Enumerator:
+     BACKEND                           :  4
+     Attributes:
+       DEVICE                          :  0
+       MODEL                           :  2
+[0] MPI startup(): ===== CPU pinning =====
+[0] MPI startup(): Rank    Pid      Node name  Pin cpu
+[0] MPI startup(): 0       143635   compute33  {0-13,112-125}
+[0] MPI startup(): 1       143636   compute33  {14-27,126-139}
+[0] MPI startup(): 2       143637   compute33  {28-41,140-153}
+[0] MPI startup(): 3       143638   compute33  {42-55,154-167}
+[0] MPI startup(): 4       143639   compute33  {56-69,168-181}
+[0] MPI startup(): 5       143640   compute33  {70-83,182-195}
+[0] MPI startup(): 6       143641   compute33  {84-97,196-209}
+[0] MPI startup(): 7       143642   compute33  {98-111,210-223}
+[0] MPI startup(): 8       12289    compute34  {0-13,112-125}
+[0] MPI startup(): 9       12290    compute34  {14-27,126-139}
+[0] MPI startup(): 10      12291    compute34  {28-41,140-153}
+[0] MPI startup(): 11      12292    compute34  {42-55,154-167}
+[0] MPI startup(): 12      12293    compute34  {56-69,168-181}
+[0] MPI startup(): 13      12294    compute34  {70-83,182-195}
+[0] MPI startup(): 14      12295    compute34  {84-97,196-209}
+[0] MPI startup(): 15      12296    compute34  {98-111,210-223}
+[0] MPI startup(): I_MPI_ROOT=/install/software/oneAPI/2025.2/mpi/2021.16
+[0] MPI startup(): ONEAPI_ROOT=/install/software/oneAPI/2025.2
+[0] MPI startup(): I_MPI_MPIRUN=mpirun
+[0] MPI startup(): I_MPI_BIND_WIN_ALLOCATE=localalloc
+[0] MPI startup(): I_MPI_HYDRA_TOPOLIB=ipl2
+[0] MPI startup(): I_MPI_HYDRA_BOOTSTRAP=slurm
+[0] MPI startup(): I_MPI_OFFLOAD_DOMAIN_SIZE=1
+[0] MPI startup(): I_MPI_OFFLOAD_CELL=tile
+[0] MPI startup(): I_MPI_RETURN_WIN_MEM_NUMA=0
+[0] MPI startup(): I_MPI_INTERNAL_MEM_POLICY=default
+[0] MPI startup(): I_MPI_OFFLOAD_TOPOLIB=level_zero
+[0] MPI startup(): I_MPI_OFFLOAD=1
+[0] MPI startup(): I_MPI_OFFLOAD_CBWR=0
+[0] MPI startup(): I_MPI_OFFLOAD_PIPELINE=0
+[0] MPI startup(): I_MPI_OFFLOAD_FAST_MEMCPY_COLL=1
+[0] MPI startup(): I_MPI_OFFLOAD_RDMA=1
+[0] MPI startup(): I_MPI_OFFLOAD_RDMA_THRESHOLD=0
+[0] MPI startup(): I_MPI_INFO_GPU_ID_LOCAL_MAP=0,0,1,1,2,2,3,3
+[0] MPI startup(): I_MPI_INFO_GPU_TILE_ID_LOCAL_MAP=0,1,2,3,4,5,6,7
+[0] MPI startup(): I_MPI_OFI_PROVIDER=psm3
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+   setup:
+     accel                             : ONEMATH # Material Acceleration
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+[0] MPI startup(): I_MPI_DEBUG=5
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+     screening                         : 0 #      Mu screening parameter
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+   environment:
+     cavity                            : none #   Type of the cavity
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+   MPI tasks                           :  1
+   OpenMP threads per MPI task         :  28
+   Poisson Solver GPU Enumerator:
+     BACKEND                           :  4
+     Attributes:
+       DEVICE                          :  0
+       MODEL                           :  2
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+   setup:
+     accel                             : ONEMATH # Material Acceleration
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+   setup:
+     accel                             : ONEMATH # Material Acceleration
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+   setup:
+     accel                             : ONEMATH # Material Acceleration
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     screening                         : 0 #      Mu screening parameter
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+   environment:
+     cavity                            : none #   Type of the cavity
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+     screening                         : 0 #      Mu screening parameter
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+     screening                         : 0 #      Mu screening parameter
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+   MPI tasks                           :  1
+   OpenMP threads per MPI task         :  28
+   Poisson Solver GPU Enumerator:
+     BACKEND                           :  4
+     Attributes:
+       DEVICE                          :  0
+       MODEL                           :  2
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+   environment:
+     cavity                            : none #   Type of the cavity
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+   environment:
+     cavity                            : none #   Type of the cavity
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+   MPI tasks                           :  1
+   OpenMP threads per MPI task         :  28
+   Poisson Solver GPU Enumerator:
+---
+ Reference Paper             : The Journal of Chemical Physics 137, 134108 (2012)
+ Version Number              : PSolver 1.10
+   MPI tasks                           :  1
+   OpenMP threads per MPI task         :  28
+   Poisson Solver GPU Enumerator:
+     BACKEND                           :  4
+     Attributes:
+ Timestamp of this run       : 2025-11-27 00:37:34.304
+     BACKEND                           :  4
+     Attributes:
+       DEVICE                          :  0
+       MODEL                           :  2
+ Root process Hostname       : compute33
+       DEVICE                          :  0
+       MODEL                           :  2
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+   setup:
+     accel                             : ONEMATH # Material Acceleration
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+   setup:
+     accel                             : ONEMATH # Material Acceleration
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+     screening                         : 0 #      Mu screening parameter
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+     screening                         : 0 #      Mu screening parameter
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+   environment:
+     cavity                            : none #   Type of the cavity
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+   environment:
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+     cavity                            : none #   Type of the cavity
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+   MPI tasks                           :  1
+   OpenMP threads per MPI task         :  28
+   Poisson Solver GPU Enumerator:
+     BACKEND                           :  4
+   MPI tasks                           :  1
+   OpenMP threads per MPI task         :  28
+   Poisson Solver GPU Enumerator:
+     Attributes:
+       DEVICE                          :  0
+       MODEL                           :  2
+     BACKEND                           :  4
+     Attributes:
+       DEVICE                          :  0
+       MODEL                           :  2
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+   setup:
+     accel                             : ONEMATH # Material Acceleration
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+     screening                         : 0 #      Mu screening parameter
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+   environment:
+     cavity                            : none #   Type of the cavity
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+   MPI tasks                           :  1
+   OpenMP threads per MPI task         :  28
+    #---------------------------------------------------------------------- Input parameters
+   setup:
+   Poisson Solver GPU Enumerator:
+     BACKEND                           :  4
+     Attributes:
+       DEVICE                          :  0
+     accel                             : ONEMATH # Material Acceleration
+     use_gpu_direct                    : Yes #    Force (or not) the usage of GPUdirect communication, if available
+       MODEL                           :  2
+     verbose                           : Yes #    Verbosity switch
+     keep_gpu_memory                   : Yes #    Do not deallocate GPU memory at each call of the (G)PS routine
+     taskgroup_size                    : 0 #      Size of the taskgroups of the Poisson Solver
+     global_data                       : No #     Charge density and Electrostatic potential are given by global arrays
+     output                            : none #   Quantities to be plotted after the main solver routine
+   kernel:
+     screening                         : 0 #      Mu screening parameter
+     isf_order                         : 16 #     Order of the Interpolating Scaling Function family
+     stress_tensor                     : Yes #    Triggers the calculation of the stress tensor
+   environment:
+     cavity                            : none #   Type of the cavity
+     fd_order                          : 16 #     Order of the Finite-difference derivatives for the GPS solver
+     itermax                           : 200 #    Maximum number of iterations of the GPS outer loop
+     minres                            : 1.e-8 #  Convergence threshold of the loop
+     pb_method                         : none #   Defines the method for the Poisson Boltzmann Equation
+   MPI tasks                           :  1
+   OpenMP threads per MPI task         :  28
+   Poisson Solver GPU Enumerator:
+     BACKEND                           :  4
+     Attributes:
+       DEVICE                          :  0
+       MODEL                           :  2
+  #------------------------------------------------------------------- Kernel Initialization
+ Poisson Kernel Initialization:
+    #---------------------------------------------------------------------- Input parameters
+   setup:
+     accel                   : ONEMATH #          Material Acceleration
+     use_gpu_direct          : Yes #              Force (or not) the usage of GPUdirect communication, if available
+     verbose                 : Yes #              Verbosity switch
+     keep_gpu_memory         : Yes #              Do not deallocate GPU memory at each call of the (G)PS routine
+     taskgroup_size          : 0 #                Size of the taskgroups of the Poisson Solver
+     global_data             : No #               Charge density and Electrostatic potential are given by global arrays
+     output                  : none #             Quantities to be plotted after the main solver routine
+   kernel:
+     screening               : 0 #                Mu screening parameter
+     isf_order               : 16 #               Order of the Interpolating Scaling Function family
+     stress_tensor           : Yes #              Triggers the calculation of the stress tensor
+   environment:
+     cavity                  : none #             Type of the cavity
+     fd_order                : 16 #               Order of the Finite-difference derivatives for the GPS solver
+     itermax                 : 200 #              Maximum number of iterations of the GPS outer loop
+     minres                  : 1.e-8 #            Convergence threshold of the loop
+     pb_method               : none #             Defines the method for the Poisson Boltzmann Equation
+   MPI tasks                 :  1
+   OpenMP threads per MPI task:  28
+   Poisson Solver GPU Enumerator:
+     BACKEND                 :  4
+     Attributes:
+       DEVICE                :  0
+       MODEL                 :  2
+ Poisson Kernel Creation:
+   Boundary Conditions       : Free
+   Memory Requirements per MPI task:
+     Density (MB)            :  50.62
+     Kernel (MB)             :  51.44
+     Full Grid Arrays (MB)   :  45.07
+   Kernel Copied on GPU      :  Yes
+ Orbital repartition:
+ -  [ 13,  13,  13,  13,  13,  13,  13,  13,  13,  13,  13,  13,  13,  13,  13,  13]
+  #Exact exchange calculation:6%; Time (s): Elapsed=0.7739, Remaining=12.
+  #Exact exchange calculation:18%; Time (s): Elapsed=2.4515, Remaining=11.
+  #Exact exchange calculation:30%; Time (s): Elapsed=4.0621, Remaining=9.5
+  #Exact exchange calculation:41%; Time (s): Elapsed=5.6738, Remaining=8.2
+  #Exact exchange calculation:53%; Time (s): Elapsed=7.3122, Remaining=6.5
+  #Exact exchange calculation:65%; Time (s): Elapsed=8.9626, Remaining=4.8
+  #Exact exchange calculation:77%; Time (s): Elapsed=10.5611, Remaining=3.2
+[1764232666.982783093] compute33:rank1.Fock: reg_mr failed: 0xff000000e4c00000:0xff000000f4bfffff (len 0x10000000) access 0x90000003 id 25 base 0xff000000d4c00000: Cannot allocate memory
+[1764232667.163439703] compute33:rank1.Fock: reg_mr failed 10 times in a row.
+  #Exact exchange calculation:88%; Time (s): Elapsed=12.1839, Remaining=1.7
+  #Exact exchange calculation:100%; Time (s): Elapsed=13.7548, Remaining=0.0
+ Exact Exchange Energy       :  1.71681878276E+09
+ Expected Exchange Energy    :  3.98942280401E-01
+ Memory Consumption Report:
+   Tot. No. of Allocations             :  336
+   Tot. No. of Deallocations           :  336
+   Remaining Memory (B)                :  0
+   Memory occupation:
+     Peak Value (MB)                   :  1420.375
+     for the array                     : displ_res
+     in the routine                    : null
+     Memory Peak of process            : 2022.460 MB
+ Walltime since initialization         :  00:00:16.651909763
+ Max No. of dictionaries used          :  595 #( 241 still in use)
+ Number of dictionary folders allocated:  1

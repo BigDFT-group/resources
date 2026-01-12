@@ -1,0 +1,49 @@
+---
+ ALL: #                       % ,  Time (s), Max, Min Load (relative)
+   Classes:
+     Flib LowLevel      : [ 2.1,  2.0,  1.00,  1.00]
+     Communications     : [ 0.9,  0.87,  1.82,  0.18]
+     PS Computation     : [ 89.8,  86.,  1.01,  0.99]
+     Total              : [ 92.8,  96.,  1.00,  1.00]
+   Categories: #Ordered by time consumption
+     PSolver Computation:
+       Data             : [ 89.7,  86.,  1.01,  0.99]
+       Class            : PS Computation
+       Info             : 3D SG_FFT and related operations
+     Routine Profiling:
+       Data             : [ 1.7,  1.7,  1.00,  1.00]
+       Class            : Flib LowLevel
+       Info             : Profiling performances for debugging
+     Allreduce, Large Size:
+       Data             : [ 0.7,  0.71,  2.00,  0.00]
+       Class            : Communications
+       Info             : Allreduce operations for more than 5 elements
+     Init to Zero:
+       Data             : [ 0.2,  0.20,  1.01,  0.99]
+       Class            : Flib LowLevel
+       Info             : Memset of storage space
+     Array allocations:
+       Data             : [ 0.2,  0.17,  1.00,  1.00]
+       Class            : Flib LowLevel
+       Info             : Heap storage allocation and associated profiling
+     PSolver Kernel Creation:
+       Data             : [ 0.2,  0.16,  1.01,  0.99]
+       Class            : PS Computation
+       Info             : ISF operations and creation of the kernel
+     PSolver Communication:
+       Data             : [ 0.2,  0.16,  1.00,  1.00]
+       Class            : Communications
+       Info             : MPI_ALLTOALL and MPI_ALLGATHERV
+     Allreduce, Small Size:
+       Data             : [ 0.0,  3.91E-04,  1.35,  0.65]
+       Class            : Communications
+       Info             : Allreduce operations for less than 5 elements
+     Gather:
+       Data             : [ 0.0,  2.87E-05,  1.08,  0.92]
+       Class            : Communications
+       Info             : Gather operations, in general moderate size arrays
+ CPU parallelism:
+   MPI tasks            : 2
+   OMP threads          : 112
+ Hostnames: [compute31, compute31]
+ Report timestamp       : 2025-11-27 01:16:47.765

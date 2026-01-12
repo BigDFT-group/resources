@@ -1,0 +1,40 @@
+---
+ ALL: #                       % ,  Time (s)
+   Classes:
+     Flib LowLevel      : [ 3.1,  0.10]
+     Communications     : [ 0.7,  2.28E-02]
+     PS Computation     : [ 82.0,  2.5]
+     Total              : [ 85.9,  3.1]
+   Categories: #Ordered by time consumption
+     PSolver Computation:
+       Data             : [ 55.7,  1.7]
+       Class            : PS Computation
+       Info             : 3D SG_FFT and related operations
+     PSolver Kernel Creation:
+       Data             : [ 26.4,  0.81]
+       Class            : PS Computation
+       Info             : ISF operations and creation of the kernel
+     Routine Profiling:
+       Data             : [ 1.8,  5.46E-02]
+       Class            : Flib LowLevel
+       Info             : Profiling performances for debugging
+     Array allocations:
+       Data             : [ 1.1,  3.41E-02]
+       Class            : Flib LowLevel
+       Info             : Heap storage allocation and associated profiling
+     PSolver Communication:
+       Data             : [ 0.7,  2.28E-02]
+       Class            : Communications
+       Info             : MPI_ALLTOALL and MPI_ALLGATHERV
+     Init to Zero:
+       Data             : [ 0.2,  7.70E-03]
+       Class            : Flib LowLevel
+       Info             : Memset of storage space
+     Allreduce, Small Size:
+       Data             : [ 0.0,  1.10E-05]
+       Class            : Communications
+       Info             : Allreduce operations for less than 5 elements
+ CPU parallelism:
+   MPI tasks            : 1
+   OMP threads          : 224
+ Report timestamp       : 2025-11-27 00:59:13.977
